@@ -1,0 +1,89 @@
+{
+  "version": "0.1.0",
+  "input_name": "demo.srt",
+  "sha256": "04f108dcb753aff0416a953b05f79575e8714e3ce96707c88964c566e60cf251",
+  "encoding": "utf-8-sig",
+  "settings": {
+    "width": 40,
+    "cps": 12.0,
+    "min_seconds": 0.7,
+    "max_seconds": 7.0,
+    "max_lines": 2
+  },
+  "cue_count": 5,
+  "issue_count": 10,
+  "issues": [
+    {
+      "position": 1,
+      "source_number": 7,
+      "code": "INDEX",
+      "label": "番号が連番でない",
+      "detail": "番号7、位置は1"
+    },
+    {
+      "position": 1,
+      "source_number": 7,
+      "code": "SPACE",
+      "label": "行の前後に空白がある",
+      "detail": "前後空白の整形候補。意図的な字下げは残してください。"
+    },
+    {
+      "position": 2,
+      "source_number": 2,
+      "code": "FAST",
+      "label": "文字数に対して表示が速い",
+      "detail": "100.0文字/秒 > 12.0文字/秒"
+    },
+    {
+      "position": 2,
+      "source_number": 2,
+      "code": "OVERLAP",
+      "label": "別の字幕と表示時間が重なる",
+      "detail": "位置1と重複（意図的な同時表示なら許容）"
+    },
+    {
+      "position": 2,
+      "source_number": 2,
+      "code": "SHORT",
+      "label": "表示時間が短い",
+      "detail": "0.300秒 < 0.7秒"
+    },
+    {
+      "position": 2,
+      "source_number": 2,
+      "code": "WIDE",
+      "label": "行が長い",
+      "detail": "幅60 > 40（全角=2、半角=1の概算）"
+    },
+    {
+      "position": 3,
+      "source_number": 3,
+      "code": "TIME_ORDER",
+      "label": "終了時刻が開始時刻以前",
+      "detail": "00:00:05,000 → 00:00:05,000"
+    },
+    {
+      "position": 4,
+      "source_number": 4,
+      "code": "LINES",
+      "label": "行数が多い",
+      "detail": "3行 > 2行"
+    },
+    {
+      "position": 4,
+      "source_number": 4,
+      "code": "LONG",
+      "label": "表示時間が長い",
+      "detail": "8.000秒 > 7.0秒"
+    },
+    {
+      "position": 4,
+      "source_number": 4,
+      "code": "UNSORTED",
+      "label": "開始時刻が前の字幕より早い",
+      "detail": "直前の位置3と順序を確認"
+    }
+  ],
+  "normalization_requested": true,
+  "normalization_changes_timing": false
+}
