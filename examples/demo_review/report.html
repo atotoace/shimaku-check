@@ -1,0 +1,24 @@
+<!doctype html><html lang="ja"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<title>字幕点検室 — 点検レポート</title><style>
+body{background:#f3f5f7;color:#182c3c;font:16px/1.65 system-ui,sans-serif;margin:0;padding:30px}
+main{max-width:1000px;margin:auto}h1{font-size:34px;margin:6px 0}.eyebrow{color:#187b72;font-weight:700}
+.intro,.summary,article{background:white;border-radius:14px;padding:22px;margin:18px 0}
+.summary{background:#143b42;color:white}.stats{display:flex;gap:34px;flex-wrap:wrap}.stat b{font-size:32px;display:block}
+.badge{display:inline-block;background:#285059;padding:4px 11px;border-radius:6px;margin:5px 5px 0 0;font-size:13px}
+article{border-left:5px solid #e6a33b}article.clean{border-left-color:#28a48c}header{font-weight:700}
+header span{display:block;color:#5a6c79;font-weight:400;font-size:14px}pre{font:18px/1.6 system-ui,sans-serif;white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f7f9;padding:14px;border-radius:8px}
+li{margin:6px 0}small{color:#596976;overflow-wrap:anywhere}ul{padding-left:22px}.note{color:#566775}
+@media(max-width:600px){body{padding:14px}h1{font-size:27px}.intro,.summary,article{padding:16px}}
+</style><main><div class="eyebrow">PROJECT ¥10,000 / LOCAL TOOL 0.1.0</div>
+<h1>字幕点検室</h1><p class="note">自動字幕を、公開する前に見直すための点検レポート。</p>
+<section class="summary"><div class="stats"><div class="stat"><b>5</b>字幕</div>
+<div class="stat"><b>4</b>要確認の字幕</div><div class="stat"><b>10</b>指摘</div></div><span class="badge">番号が連番でない 1</span><span class="badge">行の前後に空白がある 1</span><span class="badge">文字数に対して表示が速い 1</span><span class="badge">別の字幕と表示時間が重なる 1</span><span class="badge">表示時間が短い 1</span><span class="badge">行が長い 1</span><span class="badge">終了時刻が開始時刻以前 1</span><span class="badge">行数が多い 1</span><span class="badge">表示時間が長い 1</span><span class="badge">開始時刻が前の字幕より早い 1</span></section>
+<section class="intro"><b>入力：demo.srt</b><p>元ファイルは変更しません。指摘は確認候補です。意図的な重複や改行もあり、指摘ゼロでも内容・音声との一致を保証しません。</p>
+<p>設定：行幅 40（全角約20文字）、速度 12.0文字/秒、表示 0.7〜7.0秒、最大 2行。すべて初版の仮設定で、規格ではありません。</p>
+<p>番号・行前後の空白だけを整える候補は、指定した場合のみ別ファイルに保存します。時間・文言・字幕順は変更しません。</p>
+<small>入力SHA-256：04f108dcb753aff0416a953b05f79575e8714e3ce96707c88964c566e60cf251 · 文字コード：utf-8-sig</small></section>
+<article class="flagged"><header>位置 1 · 元番号 7<span>00:00:00,000 → 00:00:03,000</span></header><pre>  今日は字幕の見やすさを点検します。  </pre><ul><li><b>番号が連番でない</b> — 番号7、位置は1</li><li><b>行の前後に空白がある</b> — 前後空白の整形候補。意図的な字下げは残してください。</li></ul></article><article class="flagged"><header>位置 2 · 元番号 2<span>00:00:02,500 → 00:00:02,800</span></header><pre>これは一瞬で消えるので読み切れるか確認が必要な長い字幕です。</pre><ul><li><b>文字数に対して表示が速い</b> — 100.0文字/秒 &gt; 12.0文字/秒</li><li><b>別の字幕と表示時間が重なる</b> — 位置1と重複（意図的な同時表示なら許容）</li><li><b>表示時間が短い</b> — 0.300秒 &lt; 0.7秒</li><li><b>行が長い</b> — 幅60 &gt; 40（全角=2、半角=1の概算）</li></ul></article><article class="flagged"><header>位置 3 · 元番号 3<span>00:00:05,000 → 00:00:05,000</span></header><pre>表示時間がゼロです。</pre><ul><li><b>終了時刻が開始時刻以前</b> — 00:00:05,000 → 00:00:05,000</li></ul></article><article class="flagged"><header>位置 4 · 元番号 4<span>00:00:04,000 → 00:00:12,000</span></header><pre>字幕が三行あります。
+スマートフォンの画面でも
+読みやすいか確認しましょう。</pre><ul><li><b>行数が多い</b> — 3行 &gt; 2行</li><li><b>表示時間が長い</b> — 8.000秒 &gt; 7.0秒</li><li><b>開始時刻が前の字幕より早い</b> — 直前の位置3と順序を確認</li></ul></article><article class="clean"><header>位置 5 · 元番号 5<span>00:00:12,000 → 00:00:15,000</span></header><pre>これは問題を含めていない短い例です。</pre><ul><li>この設定での指摘なし</li></ul></article><p class="note">この報告はローカル処理で作成しました。外部通信・解析用送信・追跡コードは含みません。制作：Project ¥10,000 運営AI。</p></main></html>
